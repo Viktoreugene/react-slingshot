@@ -16,8 +16,7 @@ jobs:
       - run: npm run lint
 
   test:
-    docker:
-      - image: circleci/node:13.8.0
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -27,8 +26,7 @@ jobs:
       - run: npm run test
 
   analyze:
-    docker:
-      - image: circleci/node:13.8.0
+    <<: *defaults
     steps:
       - checkout
       - run: npm i

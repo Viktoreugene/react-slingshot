@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cicrleci/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run: npm i
@@ -17,7 +17,7 @@ jobs:
       - run: npm run lint
   test:
     docker:
-      - image: cicrleci/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - restore_cache:
@@ -28,7 +28,7 @@ jobs:
 
   analyze:
     docker:
-      - image: cicrleci/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - restore_cache:
